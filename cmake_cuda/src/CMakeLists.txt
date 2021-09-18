@@ -1,0 +1,5 @@
+set (targetName Test)
+aux_source_directory (${source_dir} source_list)
+add_executable (${targetName} ${source_list})
+include_directories (${lib_dir}/include)
+target_link_libraries (${targetName} FUNC)

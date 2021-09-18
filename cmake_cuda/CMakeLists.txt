@@ -1,0 +1,17 @@
+cmake_minimum_required (VERSION 3.6)
+if (WIN32)
+	message (STATUS "Now is windows")
+elseif (UNIX)
+	message (STATUS "Now is linux")
+endif ()
+project (cmake_and_cuda LANGUAGES CXX CUDA)
+
+set (top_dir ${PROJECT_SOURCE_DIR})
+set (source_dir ${PROJECT_SOURCE_DIR}/src)
+set (lib_dir ${top_dir}/lib)
+set (EXECUTABLE_OUTPUT_PATH ${top_dir}/bin)
+set (LIBRARY_OUTPUT_PATH ${top_dir}/lib)
+
+link_directories (${top_dir}/lib)
+add_subdirectory (src)
+add_subdirectory (lib)
